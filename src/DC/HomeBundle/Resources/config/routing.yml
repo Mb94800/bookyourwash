@@ -1,3 +1,10 @@
+# src/DC/HomeBundle/Resources/config/routing.yml
+
+home:
+    path:     /home
+    defaults: { _controller: DCHomeBundle:Default:index }
+
 dc_home_homepage:
     path:     /
     defaults: { _controller: DCHomeBundle:Default:index }
+

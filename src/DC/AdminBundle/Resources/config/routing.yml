@@ -1,0 +1,8 @@
+
+admin:
+    path: /admin
+    defaults: { _controller: DCAdminBundle:Default:login}
+
+dc_admin_homepage:
+    path:     /
+    defaults: { _controller: DCAdminBundle:Default:index }

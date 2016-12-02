@@ -1,10 +1,105 @@
 {# src/DC/HomeBundle/Resources/views/Default/index.html.twig #}
 
 <html>
-    <body>
-        Welcome to BookYourWashing <br>
 
-        <a href="#"> Sign in </a>
-        <a href="#"> Log in </a>
+
+
+
+
+
+    {{ include("::layout.html.twig") }}
+
+
+
+
+    <title> Welcome to Book Your Washing</title>
+
+    <script src="public/js/jquery-3.1.1.js"></script>
+    <body>
+
+
+    <nav class="navbar navbar-dark bg-primary" id="home__menu">
+
+        <ul class="nav navbar-nav">
+            <a class="navbar-brand"> <img src="../img/logobyw.png"></a>
+
+            <li class="nav-item active">
+                <a class="nav-link">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">Services</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">Drycleaners</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">About BYW</a>
+            </li>
+
+         </ul>
+
+
+        <div id="homemenu__linkslog">
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            <a href="{{ path('fos_user_security_logout') }}" class="btn btn-raised btn-lg" id="home__logoutbutton" >LOG OUT</a>
+        {% else %}
+
+
+                <a href="#" class="btn btn-raised btn-default" > Sign in </a>
+
+
+                <a href="{{ path('fos_user_security_login') }}" class="btn btn-raised btn-default"> Log in </a>
+
+        {% endif %}
+        </div>
+
+
+    </nav>
+
+    <section id="home__screen" class="jumbotron">
+
+
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            <div class="homescreen__heading">
+                <span id="home__welcomeuser"> Welcome {{ app.user.username }} ! </span>
+
+                 <a href="{{ path('fos_user_security_logout') }}" class="btn btn-raised btn-lg" id="home__logoutbutton" >LOG OUT</a>
+            </div>
+
+            <h4 class="list-group-item-heading"> Book a Washing machine ! </h4>
+
+
+
+            Drycleaners near to <i>  </i>
+
+
+        {% else %}
+
+
+
+
+
+            <h4 class="list-group-item-heading titlebookwash"> The first UK website for booking washing machine in drycleaners across Britain! </h4>
+
+
+
+
+
+
+
+
+        {% endif %}
+
+
+        </section>
+
+        <hr>
     </body>
+
+    <footer>
+
+        <span id="home__webmastermsg"> 2016 - BookYourWashing, Website made by {{ webmaster }} </span>
+
+    </footer>
+
 </html>
