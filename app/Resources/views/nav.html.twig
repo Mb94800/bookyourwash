@@ -1,0 +1,34 @@
+<script  src="{{ asset('js/jquery-3.1.1.js') }}"></script>
+<script  src="{{ asset('js/jquery-ui.js') }}"></script>
+<script  src="{{ asset('js/script.js') }}"></script>
+<div id="tabs">
+<nav class="navbar navbar-dark bg-primary" id="home__menu">
+
+    <button class="hamburger">&#9776;</button>
+    <button class="cross">&#735;</button>
+
+    <div class="menulogo">
+        <div class="logobyw" style="background-image:url('{{ asset('img/logobyw.png') }}')">
+
+        </div>
+     </div>
+
+    <div class="menulinks">
+
+        <ul class="menutoggles nav navbar-nav">
+
+
+            <li class="nav-item">
+                <a class="nav-link" href="#tabs1">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#tabs2">How it works</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#tabs3">About BYW</a>
+            </li>
+
+        </ul>
+
+    </div>
+</nav>

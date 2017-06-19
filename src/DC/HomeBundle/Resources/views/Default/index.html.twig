@@ -14,86 +14,88 @@
 
     <title> Welcome to Book Your Washing</title>
 
-    <script src="public/js/jquery-3.1.1.js"></script>
-    <body>
 
+    <body class="DChomepage">
 
-    <nav class="navbar navbar-dark bg-primary" id="home__menu">
+    <div id="dialog" title="Basic dialog">
+        <p>This is an animated dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+    </div>
 
-        <ul class="nav navbar-nav">
-            <a class="navbar-brand"> <img src="../img/logobyw.png"></a>
-
-            <li class="nav-item active">
-                <a class="nav-link">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link">Services</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link">Drycleaners</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link">About BYW</a>
-            </li>
-
-         </ul>
-
-
-        <div id="homemenu__linkslog">
-        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-            <a href="{{ path('fos_user_security_logout') }}" class="btn btn-raised btn-lg" id="home__logoutbutton" >LOG OUT</a>
-        {% else %}
-
-
-                <a href="#" class="btn btn-raised btn-default" > Sign in </a>
-
-
-                <a href="{{ path('fos_user_security_login') }}" class="btn btn-raised btn-default"> Log in </a>
-
-        {% endif %}
-        </div>
-
-
-    </nav>
-
+    {{ include("::nav.html.twig") }}
     <section id="home__screen" class="jumbotron">
+        <div id="tabs1">
 
 
-        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-            <div class="homescreen__heading">
-                <span id="home__welcomeuser"> Welcome {{ app.user.username }} ! </span>
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 
-                 <a href="{{ path('fos_user_security_logout') }}" class="btn btn-raised btn-lg" id="home__logoutbutton" >LOG OUT</a>
+                <div class="homescreen__heading">
+                    <span id="home__welcomeuser"> Welcome {{ app.user.username }} ! </span>
+
+                    <a href="{{ path('fos_user_security_logout') }}" class="btn btn-raised btn-lg" id="home__logoutbutton" >LOG OUT</a>
+                </div>
+
+            {% endif %}
+
+
+
+
+
+
+
+
+            <div class="DCHome__maintext">
+                       <h2 class="DCHome__maintitle"> The easiest way to book a wash in any UK drycleaner ! </h2>
+
+                            <p class="DCHome__subtitle"> Book online your washing machine ! </p>
+                        </div>
+
+                        <div class="DCHome__checkDC">
+
+                            {{ form_start(form) }}
+
+                                {{ form_errors(form) }}
+                                {{ form_widget(form.postcode, {'attr': {'class': 'checkDC__postcode', 'placeholder' : 'Enter your postcode'}}) }}
+                                {{ form_widget(form.save, {'attr': {'class': 'btn btn-info'}}) }}
+                                {{ form_widget(form.ipaddress) }}
+                                {{ form_widget(form.datetime) }}
+                            {{ form_rest(form) }}
+
+                           {{ form_end(form) }}
+                        </div>
             </div>
 
-            <h4 class="list-group-item-heading"> Book a Washing machine ! </h4>
+        <div id="tabs2">
 
+                    How to book a washing machine ?
 
+                    <h3> In BookYourWash, everything is simple. </h3>
 
-            Drycleaners near to <i>  </i>
+                    <ul>
+                        <li> Firstly, enter your postcode to find nearest drycleaners in your city </li>
+                        <li> Secondly, let's book your washing in a drycleaner in the list </li>
+                        <li> Thirdly, you will get a booking code with a time to come in the drycleaner </li>
+                        <li> Fourdly, you don't have to wait : just put your booking code in the washing machine enbedded-screen. </li>
+                        <li> Yes! You can put your clothes in! </li>
+                    </ul>
 
+        </div>
 
-        {% else %}
+        <div id="tabs3">
+            Website made in 2016, by Mohamed Boubaker, Brighton University BSc European Computing student
 
+            <p> For contacting the administrator, just fill out the form above. We'll be in touch as soon as possible ! </p>
 
+            <form method="post" action="{{ path("home") }}"></form>
 
+            <label for="email"> Your e-mail </label>
+            <input type="email" name="email" id="email">
 
+            <label for="msg"> Your message </label>
+            <input type="textarea" name="msg" id="msg">
+            </form>
+        </div>
 
-            <h4 class="list-group-item-heading titlebookwash"> The first UK website for booking washing machine in drycleaners across Britain! </h4>
-
-
-
-
-
-
-
-
-        {% endif %}
-
-
-        </section>
-
-        <hr>
+    </section>
     </body>
 
     <footer>

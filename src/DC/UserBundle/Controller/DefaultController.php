@@ -8,6 +8,12 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
+
+        $this->getUser();
+        var_dump($this->getUser());
+        die("____");
+
+        
         return $this->render('DCUserBundle:Default:layout.html.twig');
     }
 }

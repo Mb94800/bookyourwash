@@ -1,0 +1,91 @@
+<html>
+{{ include("::layout.html.twig") }}
+
+      <h3> Edit opening hours </h3>
+
+        <table>
+
+            <th> Day </th>
+            <th> Hours </th>
+
+                <tr>
+                    <td> Monday </td>
+                    <td> {{ listOH.0.dayOneOpening|date('h:i A') }} , {{ listOH.0.dayOneClosing|date('h:i A') }}</td>
+                </tr>
+
+                <tr>
+                    <td> Tuesday </td>
+                    <td> {{ listOH.0.dayTwoOpening|date('h:i A') }} , {{ listOH.0.dayTwoClosing|date('h:i A') }}</td>
+                </tr>
+
+                <tr>
+                    <td> Wednesday </td>
+                    <td> {{ listOH.0.dayThreeOpening|date('h:i A') }} , {{ listOH.0.dayThreeClosing|date('h:i A') }}</td>
+                </tr>
+
+                <tr>
+                    <td> Thursday </td>
+                    <td> {{ listOH.0.dayFourOpening|date('h:i A') }} , {{ listOH.0.dayFourClosing|date('h:i A') }}</td>
+                </tr>
+
+                <tr>
+                    <td> Friday </td>
+                    <td> {{ listOH.0.dayFiveOpening|date('h:i A') }} , {{ listOH.0.dayFiveClosing|date('h:i A') }}</td>
+                </tr>
+
+
+        </table>
+
+
+
+      <h3> Slots for this drycleaner </h3>
+
+      <table>
+          <th> Washing machine number </th>
+          <th> Time booked </th>
+          <th> State </th>
+
+          {% for b in listB %}
+          <tr>
+              <td>{{  b.washingmachine }} </td>
+              <td>{{  b.startDateTime|date('h:i') }}</td>
+              <td>{{  b.booked }}</td>
+          </tr>
+          {% endfor %}
+      </table>
+        {{ form_start(form) }}
+            {{ form_label(form.startDateTime, "Slot time", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+            {{ form_widget(form.startDateTime, {'attr': {'class': 'form-control'}}) }}
+
+            {{ form_widget(form.save) }}
+        {{ form_end(form) }}
+
+
+      <h3> Washing machines for drycleaner {{ drycleaner.0.name }} </h3>
+
+      <table>
+          <th> Washingmachine number </th>
+          <th> Slot </th>
+          <th> State </th>
+      </table>
+
+
+
+
+
+
+
+      <table>
+          <th> Avaibility </th>
+          {% for wm in listWM %}
+              <tr>
+                 {%  if wm.avaibility == true %}
+                        <td> One machine available </td>
+                  {% else %}
+                        <td> One machine unavailable </td>
+                  {% endif %}
+              </tr>
+          {% endfor %}
+      </table>
+      <a href="{{ path('addWM', {'id' : drycleaner.0.id }) }}"> Add a washing machine </a>
+</html>

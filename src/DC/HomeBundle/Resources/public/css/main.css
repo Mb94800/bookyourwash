@@ -1,25 +1,57 @@
 
-body{
-    background-color:#71A0A0;
-    color:white;
-    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+.dchomepage {
+    background: url("../../../img/blackwhite.jpg");
+    background-repeat: yes;
+    background-size: 100% 100%;
+}
+@font-face {
+    font-family: "Ostrich";
+    src: url("../../../fonts/ostrich/OstrichSans-Medium.otf");
+}
 
+@font-face {
+    font-family: "Ostrich Black";
+    src: url("../../../fonts/ostrich/OstrichSans-Black.otf");
+}
+
+@font-face {
+    font-family: "Ostrich Ultralight";
+    src: url("../../../fonts/ostrich/OstrichSans-Light.otf");
+}
+
+@font-face {
+    font-family: "Ostrich Heavy";
+    src: url("../../../fonts/ostrich/OstrichSans-Heavy.otf");
+}
+body{
+    background-color:grey;
+    color:white;
+    font-family:"Ostrich Black";
 
 }
 
+section{
+    margin-left:20px;
+    margin-right:20px;
+
+}
 
 body #home__screen
 {
     border-style: border-radius;
+    background-color: rgba(0, 0, 0, 0.7);
     padding-top:50px;
     padding-bottom:50px;
     padding-left:50px;
     padding-right:50px;
     text-align:center;
-    background-color:white;
-    color:gray;
+    color:white;
     margin: 10px 10px;
     position:relative;
+}
+
+body #form_postcode{
+    color:white;
 }
 
 body #home__screen  #home__logoutbutton{
@@ -39,6 +71,10 @@ body #home__screen #home__welcomeuser{
     position:absolute;
 }
 
+body .DCgeolocation__booking{
+    float:right;
+}
+
 body hr{
     width:95%;
     background-color:white;
@@ -48,6 +84,7 @@ body hr{
 nav{
     background-color:white;
     color:black;
+    margin:0px;
 }
 
 footer{
@@ -66,13 +103,286 @@ footer{
 
 #home__menu{
     background-color: white !important;
-    padding:20px 20px;
+    padding:30px 30px;
+    font-size:18px;
 }
 
 #home__menu ul li .nav-link{
     color:#1b96fe !important;
 }
 
+
+
 #homemenu__linkslog{
     float:right;
+}
+
+.auth__login{
+
+}
+
+.DCAdminMana{
+    padding:30px 30px;
+}
+
+.AdminMana__listdc tr td,.AdminMana__listdc tr th {
+   padding:5px 5px;
+}
+
+.adminmana__adddc{
+    background-color:white !important;
+    color:black;
+    padding-left:50px;
+    padding-right:50px;
+}
+
+.AdminMana__addDC label{
+    font-size:20px;
+}
+
+.checkDC__postcode{
+    font-size:22px;
+}
+
+.hamburger{
+    background:none;
+    position:absolute;
+    top:0;
+    right:0;
+    line-height:45px;
+    padding:5px 15px 0px 15px;
+    color:black;
+    border:0;
+    font-size:1.4em;
+    font-weight:bold;
+    cursor:pointer;
+    outline:none;
+    z-index:10000000000000;
+}
+
+.cross{
+    background:none;
+    position:absolute;
+    top:0px;
+    right:0;
+    padding:13px 15px 0px 15px;
+    color:black;
+    border:0;
+    font-size:3em;
+    line-height:65px;
+    font-weight:bold;
+    cursor:pointer;
+    outline:none;
+    z-index:10000000000000;
+}
+
+input.checkDC__postcode{
+    width:20% !important;
+    border-radius:4px;
+
+}
+
+
+.DCHome__maintext{
+    margin-top:20px;
+    margin-bottom: 60px;
+}
+
+.listDCgeolocation{
+    padding:20px 20px;
+
+
+
+}
+
+.DCgeolocation{
+    background-color:white;
+    padding:20px 20px;
+    margin-bottom:10px;
+    color:#1b96fe;
+
+}
+
+.DCgeolocation__location{
+    float:right;
+    font-size:50px;
+}
+
+.DCgeolocation__title{
+    font-weight:bold;
+    font-size:50px;
+}
+
+.DCgeolocation__subtitle{
+    font-size:38px;
+    font-family: "Ostrich";
+}
+
+.DCgeolocation__topopeninghours {
+    display: inline-block;
+    font-size:28px;
+}
+
+#form_save, #form_postcode{
+    font-size:30px;
+}
+
+.DCHome__maintitle{
+    font-size:50px;
+}
+
+.DCHome__subtitle{
+    font-size:38px !important;
+}
+.openinghours__days{
+    display:none;
+}
+.DCgeolocation__booking{
+    font-size:28px;
+}
+
+.DCgeolocation__booking img{
+    margin-right:5px;
+}
+.bookingdone__code{
+    border-style:dotted;
+}
+
+.booking_chooseSlot label,input{
+    font-size:28px;
+
+}
+
+.booking_chooseSlot input {
+}
+
+.logobyw{
+    background-size:contain;
+    width:100%;
+    height:40px;
+    background-repeat: no-repeat;
+    display:inline-block;
+
+}
+
+.menulinks{
+    display:inline-block;
+}
+
+#home__menu li {
+    font-size:50px;
+    margin-right:20px;
+    font-weight:bold;
+    font-family: "Ostrich Ultralight";
+}
+
+#home__menu li:nth-child(1){
+    margin-left:20px;
+}
+
+.menulogo{
+    width:33%;
+    display:inline-block;
+}
+
+
+#tabs2 #tabs3{
+    font-size:30px;
+}
+
+form button{
+    color:black;
+}
+@media screen and (max-width: 1000px) {
+    .menulogo {
+        width: 50%;
+    }
+
+    #home__menu li {
+        font-size: 30px;
+    }
+}
+
+
+@media screen and (max-width: 860px) {
+
+    #home__menu li {
+        font-size: 22px;
+    }
+}
+@media screen and (max-width:680px) {
+
+    .hamburger,.cross{
+        top:23px;
+    }
+
+    .menutoggles{
+        display:none;
+    }
+
+    .DCHome__maintitle{
+        font-size:35px;
+    }
+
+    .DCHome__subtitle{
+        font-size:23px;
+    }
+
+    .listDCgeolocation{
+        width:100%;
+    }
+
+    .menulogo{
+        width:90%;
+    }
+
+    .DCgeolocation__title{
+        width:100%;
+        display: inline-block;
+    }
+    
+    .DCgeolocation__location{
+        display: inline-block;
+        float:none;
+    }
+
+    #home__menu{
+        width:100%;
+    }
+
+    #home__menu li {
+       width:100%;
+        font-size:35px;
+        margin:0px;
+        padding-bottom: 10px;
+        font-family: "Ostrich Heavy";
+    }
+
+    #home__menu li:nth-child(1) {
+        margin:0px;
+    }
+
+
+
+    input.checkDC__postcode{
+        width:100% !important;
+    }
+
+
+    body #home__screen{
+        text-align:left;
+    }
+
+    .DCHome__checkDC button{
+        width:100%;
+        font-size:25px;
+    }
+}
+
+
+
+@media screen and (min-width:680px) {
+
+
+
 }

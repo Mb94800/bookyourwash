@@ -1,0 +1,29 @@
+<html>
+
+    <body>
+    {{ include("::layout.html.twig") }}
+    {{ include("::nav.html.twig") }}
+
+
+
+
+
+     <section>
+         <h2> What time do you want for your washing ? </h2>
+
+         {{ form_start(form, {'attr': {'class': 'booking_chooseSlot'} }) }}
+                {% for choice in form.startDateTime %}
+                   <div>
+                       {{ form_label(choice) }}
+                       {{ form_widget(choice) }}
+                   </div>
+                {% endfor %}
+
+         {{ form_end(form) }}
+     </section>
+
+
+
+    </body>
+
+</html>

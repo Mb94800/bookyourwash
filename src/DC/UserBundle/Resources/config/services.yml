@@ -2,3 +2,5 @@ services:
 #    dc_user.example:
 #        class: DC\UserBundle\Example
 #        arguments: ["@service_id", "plain_value", "%parameter%"]
+ dc_generation:
+        class: DC\HomeBundle\Generation\DCGeneration

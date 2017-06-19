@@ -1,8 +1,20 @@
+add:
+     path: /add
+     defaults: { _controller: DCAdminBundle:Default:addDrycleaner}
+
+edit:
+     path: /edit
+     defaults: { _controller: DCAdminBundle:Default:editDrycleaner}
 
 admin:
     path: /admin
     defaults: { _controller: DCAdminBundle:Default:login}
 
-dc_admin_homepage:
-    path:     /
-    defaults: { _controller: DCAdminBundle:Default:index }
+addWM:
+    path:     /addWM
+    defaults: { _controller: DCAdminBundle:Default:addWashingMachine, id: id}
+
+addOpeningHours:
+    path:    /addOpeningHours
+    defaults: {_controller: DCAdminBundle:Default:addOpeningHours}
+

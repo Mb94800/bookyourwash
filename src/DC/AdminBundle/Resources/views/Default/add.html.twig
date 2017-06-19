@@ -1,0 +1,119 @@
+{# src/DC/HomeBundle/Resources/views/Default/index.html.twig #}
+
+<html>
+{{ include("::layout.html.twig") }}
+
+<script  src="{{ asset('js/jquery.postcodes.min.js') }}"></script>
+<script  src="{{ asset('js/main.js') }}"></script>
+
+    <body>
+
+        <h2> Add a drycleaner </h2>
+
+        <div class="well AdminMana__addDC">
+            {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+
+            {# Les erreurs générales du formulaire. #}
+            {{ form_errors(form) }}
+            <div class="blockFormadd">
+                <div class="form-group">
+                    {{ form_label(form.name, "Drycleaner name", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+
+                    {# Affichage des erreurs pour ce champ précis. #}
+                    {{ form_errors(form.name) }}
+
+                    <div class="col-sm-4">
+                        {# Génération de l'input. #}
+                        {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    {{ form_label(form.country, "Country", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+
+                    {# Affichage des erreurs pour ce champ précis. #}
+                    {{ form_errors(form.country) }}
+
+                    <div class="col-sm-4">
+                        {# Génération de l'input. #}
+                        {{ form_widget(form.country, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    {{ form_label(form.county, "County", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+
+                    {# Affichage des erreurs pour ce champ précis. #}
+                    {{ form_errors(form.country) }}
+
+                    <div class="col-sm-4">
+                        {# Génération de l'input. #}
+                        {{ form_widget(form.county, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                </div>
+             </div>
+
+
+            <div class="blockFormadd">
+                    <div class="form-group" id="lookup_field"> </div>
+
+
+
+                <div class="form-group">
+                    <!-- Below are your existing input fields -->
+                    {{ form_label(form.addresslineone, "Address line one", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+
+                    <div class="col-sm-4">
+                        {{ form_widget(form.addresslineone, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <!-- Below are your existing input fields -->
+                    {{ form_label(form.addresslinetwo, "Address line two", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+
+                    <div class="col-sm-4">
+                        {{ form_widget(form.addresslinetwo, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <!-- Below are your existing input fields -->
+                    {{ form_label(form.addresslinethree, "Address line three", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+
+                    <div class="col-sm-4">
+                        {{ form_widget(form.addresslinethree, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <!-- Below are your existing input fields -->
+                    {{ form_label(form.postcity, "Post City", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+
+                    <div class="col-sm-4">
+                        {{ form_widget(form.postcity, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    {{ form_label(form.postalcode, "Postal code", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+
+                    {# Affichage des erreurs pour ce champ précis. #}
+                    {{ form_errors(form.postalcode) }}
+
+                    <div class="col-sm-4">
+                        {# Génération de l'input. #}
+                        {{ form_widget(form.postalcode, {'attr': {'class': 'form-control', 'id':'postcode'}}) }}
+                    </div>
+                </div>
+            </div>
+
+
+
+            {# Fermeture de la balise <form> du formulaire HTML #}
+            {{ form_end(form) }}
+        </div>
+
+    </body>
+
+</html>

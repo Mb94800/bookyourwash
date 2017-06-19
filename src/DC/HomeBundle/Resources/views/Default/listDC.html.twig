@@ -1,0 +1,82 @@
+<html>
+
+      <body>
+
+
+
+      {{ include("::layout.html.twig") }}
+      {{ include("::nav.html.twig") }}
+
+
+
+            <section class="listDCgeolocation">
+
+                  <h3> Nearest drycleaners to {{ postcode }} </h3>
+
+
+                  {% for dc in listDC %}
+
+                        <div class="DCgeolocation">
+
+                              <div class="DCgeolocation__top">
+
+                                    <span class="DCgeolocation__title"> {{ dc.name }}  </span>
+                                    <span class="DCgeolocation__location"> <img src="{{ asset('img/location.png') }}" width="40" height="40"> {{ dc.distance }} km from you </span>
+
+                              </div>
+                              <div class="DCgeolocation__subtitle"> {{ dc.postcity }} , {{ dc.addresslineone }}  </div>
+
+                              <div class="DCgeolocation__bottom">
+                                    <div class="DCgeolocation__topopeninghours">
+                                          <a href="#"><img src="{{ asset('img/arrowdown.jpg') }}" width="20" height="20"> Opening Hours </a>
+                                          </br>
+
+                                          <ul class="openinghours__days">
+                                                {% if dc.openingHours == null  %}
+
+                                                      Sorry, opening hours are not available for this drycleaner.
+
+                                                {% else %}
+
+                                                      <li> Monday : {{ dc.openingHours.0.dayOneOpening|date('h:i A') }} - {{ dc.openingHours.0.dayOneClosing|date('h:i A') }} </li>
+                                                      <li> Tuesday : {{ dc.openingHours.0.dayTwoOpening|date('h:i A') }} - {{ dc.openingHours.0.dayTwoClosing|date('h:i A') }} </li>
+                                                      <li> Wednesday : {{ dc.openingHours.0.dayThreeOpening|date('h:i A') }} - {{ dc.openingHours.0.dayThreeClosing|date('h:i A') }}</li>
+                                                      <li> Thursday : {{ dc.openingHours.0.dayFourOpening|date('h:i A') }} - {{ dc.openingHours.0.dayFourClosing|date('h:i A') }}</li>
+                                                      <li> Friday : {{ dc.openingHours.0.dayFiveOpening|date('h:i A') }} - {{ dc.openingHours.0.dayFiveClosing|date('h:i A') }} </li>
+
+                                                {% endif %}
+
+                                          </ul>
+
+                                          <button class="cross">&#735;</button>
+                                    </div>
+
+
+
+                                    <div class="DCgeolocation__booking">
+                                          {% if dc.numberWM == 0 %}
+                                                <img src="{{ asset('img/redcross.png') }}" width="20" height="20">No washing machine available, please try later. </div>
+                                          {% else %}
+                                                {{ dc.numberWM }} Washing Machine available
+                                                 <a href="{{ path('booking', { 'dcid': dc.id , 'wmid' : dc.lastWM.0.id }) }}" class="btn btn-info"> Book one ! </a></div>
+                                                 <div>
+
+                                                 </div>
+                                          {% endif %}
+                              </div>
+
+
+
+
+
+
+                        </div>
+
+
+                  {% endfor %}
+
+            </section>
+
+      </body>
+
+</html>

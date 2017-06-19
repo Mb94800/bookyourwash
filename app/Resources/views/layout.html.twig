@@ -1,4 +1,7 @@
 {# app/Resources/views/layout.html.twig #}
+<style type="text/css">
+
+</style>
 
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
 <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css">
@@ -12,3 +15,11 @@
 
 <link href="/assets/css/style.css">
 <link rel="stylesheet" href="{{ asset('bundles/dchome/css/main.css') }}" type="text/css" />
+<script  src="{{ asset('js/jquery-3.1.1.js') }}"></script>
+<script  src="{{ asset('js/jquery-ui.js') }}"></script>
+
+
+<body>
+{% block body %}{% endblock %}
+{% block javascripts %}{% endblock %}
+</body>

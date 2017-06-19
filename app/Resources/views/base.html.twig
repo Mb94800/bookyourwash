@@ -5,7 +5,24 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="{{ asset('bundles/dchome/css/bootstrap/bootstrap.css') }}" type="text/css" />
+        <link rel="stylesheet" href="{{ asset('bundles/dchome/css/bootstrap/bootstrap-flex.css') }}" type="text/css" />
+        <link rel="stylesheet" href="{{ asset('bundles/dchome/css/bootstrap/bootstrap-grid.css') }}" type="text/css" />
+        <link rel="stylesheet" href="{{ asset('bundles/dchome/css/bootsrap/bootstrap-reboot.css') }}" type="text/css" />
+        <link rel="stylesheet" href="{{ asset('bundles/dchome/css/mdb.css') }}" type="text/css" />
+
+
+
+        <link rel="stylesheet" href="{{ asset('bundles/dchome/css/main.css') }}" type="text/css" />
+        <script  src="{{ asset('js/jquery-3.1.1.js') }}"></script>
+        <script  src="{{ asset('js/jquery-ui.js') }}"></script>
     </head>
+
     <body>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}

@@ -1,0 +1,29 @@
+<html>
+
+    <body>
+
+
+        {{ include("::layout.html.twig") }}
+        {{ include("::nav.html.twig") }}
+
+
+        <section
+
+            <h2> Thank you for your booking ! </h2>
+
+            <h4> What is happening now ? </h4>
+
+            <p> You have booked your washing for {{ (booking.0.getStartDateTime|date('H:i')) }}, in {{ drycleaner.0.postcity }} </p>
+
+            <p> Enter your number phone just below to confirm your washing ! You will receive an other sms too when the cleaning will be done. </p>
+
+            {{ form_start(form) }}
+
+            {{ form_end(form) }}
+            <table class="bookingdone__code"> {{ code }} </table>
+
+         </section>
+
+    </body>
+
+</html>

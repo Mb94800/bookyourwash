@@ -1,0 +1,21 @@
+<html>
+{{ include("::layout.html.twig") }}
+
+        <body>
+                <h3> Add a washing machine </h3>
+
+                {{ form_start(form) }}
+                <div class="form-group">
+                        {{ form_label(form.avaibility, "Avaibility", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                         <div class="col-sm-4">
+                                {{ form_widget(form.avaibility, {'attr': {'class': 'form-control'}}) }}
+                                {{ form_widget(form.idDrycleaner, {'value' : id}) }}
+                          </div>
+                                {{ form_widget(form.save) }}
+
+
+                </div>
+
+                {{ form_end(form) }}
+        </body>
+</html>

@@ -1,4 +1,10 @@
 services:
 #    dc_admin.example:
-#        class: DC\AdminBundle\Example
+#        class: DC\HomeBundle\Example
 #        arguments: ["@service_id", "plain_value", "%parameter%"]
+ dc_redirection:
+        class: DC\HomeBundle\Redirection\AfterLoginRedirection
+
+ dc_checkuser:
+        class: DC\AdminBundle\CheckUser\CheckUser
+        arguments: [@security.role_hierarchy]

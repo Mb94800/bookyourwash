@@ -1,0 +1,74 @@
+<html>
+{{ include("::layout.html.twig") }}
+
+    <body>
+
+        <h2> Well done ! Your drycleaner is finally added. Let's define your opening hours </h2>
+
+        {{ form_start(form) }}
+
+        <div class="form-group">
+            <!-- Below are your existing input fields -->
+
+
+            <div class="col-sm-4">
+                <p> Day One </p>
+                {{ form_label(form.dayOneOpening, "Opening", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                {{ form_widget(form.dayOneOpening, {'attr': {'class': 'form-control'}}) }}
+                {{ form_label(form.dayOneClosing, "Closing", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                {{ form_widget(form.dayOneClosing, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <div class="col-sm-4">
+                <p> Day Two </p>
+                {{ form_label(form.dayTwoOpening, "Opening", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                {{ form_widget(form.dayTwoOpening, {'attr': {'class': 'form-control'}}) }}
+                {{ form_label(form.dayTwoClosing, "Closing", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                {{ form_widget(form.dayTwoClosing, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <div class="col-sm-4">
+                <p> Day Three </p>
+                {{ form_label(form.dayThreeOpening, "Opening", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                {{ form_widget(form.dayThreeOpening, {'attr': {'class': 'form-control'}}) }}
+                {{ form_label(form.dayThreeClosing, "Closing", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                {{ form_widget(form.dayThreeClosing, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+
+            <div class="col-sm-4">
+                <p> Day Four </p>
+                {{ form_label(form.dayFourOpening, "Opening", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                {{ form_widget(form.dayFourOpening, {'attr': {'class': 'form-control'}}) }}
+                {{ form_label(form.dayFourClosing, "Closing", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                {{ form_widget(form.dayFourClosing, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <div class="col-sm-4">
+                <p> Day Five </p>
+                {{ form_label(form.dayFiveOpening, "Opening", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                {{ form_widget(form.dayFiveOpening, {'attr': {'class': 'form-control'}}) }}
+                {{ form_label(form.dayFiveClosing, "Closing", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                {{ form_widget(form.dayFiveClosing, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <div class="col-sm-4">
+                <p> Day Six </p>
+                {{ form_label(form.daySixOpening, "Opening", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                {{ form_widget(form.daySixOpening, {'attr': {'class': 'form-control'}}) }}
+                {{ form_label(form.daySixClosing, "Closing", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                {{ form_widget(form.daySixClosing, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <div class="col-sm-4">
+                <p> Day Seven </p>
+                {{ form_label(form.daySevenOpening, "Opening", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                {{ form_widget(form.daySevenOpening, {'attr': {'class': 'form-control'}}) }}
+                {{ form_label(form.daySevenClosing, "Closing", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                {{ form_widget(form.daySevenClosing, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+        {{ form_end(form) }}
+    </body>
+
+</html>

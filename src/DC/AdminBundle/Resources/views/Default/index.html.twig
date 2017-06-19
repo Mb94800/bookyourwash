@@ -1,1 +1,43 @@
-Hello World!
+{# src/DC/HomeBundle/Resources/views/Default/index.html.twig #}
+
+<html>
+{{ include("::layout.html.twig") }}
+
+    <body>
+
+        <section class="DCAdminMana">
+
+            <h1> Hello, {{ app.user.username }} Welcome to your BookYourWash administration </h1>
+
+            <h3> Your drycleaners </h3>
+
+            <table class="AdminMana__listdc" border="1">
+                <th> Drycleaner name </th>
+                <th> City </tth>
+                <th> Address </th>
+                <th> Country </th>
+                <th> Washing machines available </th>
+                <th> Washing machines unavailable </th>
+                {% for drycleaner in listDC %}
+                    <tr>
+                        <td> {{ drycleaner.name }} </td>
+                        <td> {{ drycleaner.postcity }}</td>
+                        <td> {{ drycleaner.addresslineone }}</td>
+                        <td> {{ drycleaner.country }}</td>
+                        <td> {{ drycleaner.numberWMAvailable }} </td>
+                        <td> {{ drycleaner.numberWMUnavailable }} </td>
+
+                        <td> <a href='{{ path('edit', {'id' : drycleaner.id}) }}'> Manage </a> </td>
+                    </tr>
+                {% endfor %}
+            </table>
+
+            </br>
+
+            <a href={{ path('add') }}> Add a drycleaner </a>
+
+         </section>
+
+    </body>
+
+</html>

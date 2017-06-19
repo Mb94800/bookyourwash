@@ -1,10 +1,23 @@
 # src/DC/HomeBundle/Resources/config/routing.yml
 
 home:
-    path:     /home
+    path:     /H
     defaults: { _controller: DCHomeBundle:Default:index }
 
 dc_home_homepage:
     path:     /
-    defaults: { _controller: DCHomeBundle:Default:index }
+    defaults: { _controller: DCHomeBundle:Default:searchDC }
 
+dc_home_listdc:
+    path:     /nearest
+    defaults: { _controller: DCHomeBundle:Default:shownearestDC }
+
+
+booking:
+    path: /booking
+    defaults: { _controller: DCHomeBundle:Default:bookingDC }
+
+
+dc_bookingdone:
+    path: /bookingdone
+    defaults: {_controller: DCHomeBundle:Default:confirmationBooking}
