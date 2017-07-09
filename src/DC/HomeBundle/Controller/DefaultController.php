@@ -78,6 +78,7 @@ class DefaultController extends Controller
     /**
      * @param $postcode
      * @return \Symfony\Component\HttpFoundation\Response
+     * Show nearest drycleaners of postcode
      */
     public function shownearestDCAction($postcode){
 
@@ -110,7 +111,7 @@ class DefaultController extends Controller
 
     }
 
-
+    // This function will make appear the booking's form
     public function bookingDCaction(Request $request){
 
         $dcid = $_GET['dcid'];
@@ -196,6 +197,7 @@ class DefaultController extends Controller
 
     }
 
+    // For confirming a booking. It will send a SMS at number specified.
     public function confirmationBookingAction(Request $request,$code,$booking,$drycleaner){
         $em = $this->getDoctrine()->getManager();
 
@@ -217,7 +219,7 @@ class DefaultController extends Controller
 
             $msg = $this->container->get('dc_messages');
             $msg->sendConfirmation($booking,$drycleaner,$code,$formPhone->getData()['Numberphone']);
-            var_dump($msg);
+
             return $this->render('DCHomeBundle:Default:bookingdone2.html.twig');
         }
 
@@ -226,6 +228,7 @@ class DefaultController extends Controller
 
     }
 
+    // For calculating distance between our location and drycleaner's city
     function distance($lat1, $lon1, $lat2, $lon2, $unit) {
 
         $theta = $lon1 - $lon2;
@@ -250,6 +253,7 @@ class DefaultController extends Controller
        return($this->searchDCAction(new Request()));
     }
 
+    // For getting latitude and longtitude from a UK postal code
     public function get_lat_long($postalcode,$opt){
         $postalcode = urlencode($postalcode);
         $url ="https://maps.googleapis.com/maps/api/geocode/json?address=".$postalcode.",+UK&sensor=false&key=AIzaSyCuoDQheiwo8yZhH-zJuYSnvZ2LyjQvZKI";
